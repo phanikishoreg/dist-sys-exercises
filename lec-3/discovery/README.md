@@ -1,4 +1,9 @@
-# Discovering Services
+# HW3 Assignment:
+1. Prototypes for simple_serve, print_serve, store_serve and some conversion/proxy servers to send hello to print_serve.
+2. Protocol idea from our team. 
+
+### Acutal Assignment (below:)
+## Discovering Services 
 From the conversion server exercise you should have discovered that coordinating services to work together can be quite difficult, especially if they are not all under your control.
 
 In this exercise we will design and build a `discovery` service, which allows a client (e.g., a conversion proxy server) to lookup the IP and port of a server hosting a particular service.
