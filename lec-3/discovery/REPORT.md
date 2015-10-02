@@ -111,4 +111,4 @@ For more details, please refer to README.md
 
 * If you observe the logs of Proxy, Discovery and Conversion servers, you'll see the distributed behavior.
 
-## Changle, Ashwini: Can you add the exact steps you followed to show the working? Commands used to run each! Steps and sample of one multi-step conversion!
+## Changle, Ashwini, Mruganka: Can you add the exact steps you followed to show the working? Commands used to run each! Steps and sample of one multi-step conversion!

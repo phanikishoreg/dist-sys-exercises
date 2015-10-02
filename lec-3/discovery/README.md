@@ -67,7 +67,7 @@ in->m:in->cm,cm->m
 
 #### Conversion servers
 
-##### @Harpreet: Describe working and things for each server here..
+## @Harpreet, @Mruganka: Describe working and things for each server here..
 
 To cover:
 * how to compile (if java or c programs)
