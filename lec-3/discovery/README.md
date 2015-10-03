@@ -69,6 +69,25 @@ in->m:in->cm,cm->m
 
 ## @Harpreet, @Mruganka: Describe working and things for each server here..
 
+#### Conversion Servers - python
+
+Our conversion server is an extended version of HW2 conversion server.
+To compile and run:
+```
+$ python <programName.py> <IP:Discovery Server> <IP: Conv Server> <portnum>
+```
+where,
+IP:Discovery Server - is the ip address of discovery server
+
+IP: Conv Server - is ip address of conversion server
+
+ex:
+to register to 1 discovery server:
+$ python PythonConvServ2.py 5757
+
+registered
+Started server on  5757
+
 To cover:
 * how to compile (if java or c programs)
 * how to run, what command line inputs.
