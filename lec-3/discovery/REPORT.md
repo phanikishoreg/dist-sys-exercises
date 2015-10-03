@@ -96,7 +96,7 @@ FAILURE
 
 * Each server takes different set of command line arguments. 
 * Sequence to run:
-    * Host the Discovery server.
+    * Host the Discovery server. It always runs on port 5555.
     * And then host Proxy and conversion servers with Discovery server information. 
 
 For more details, please refer to README.md
@@ -112,3 +112,31 @@ For more details, please refer to README.md
 * If you observe the logs of Proxy, Discovery and Conversion servers, you'll see the distributed behavior.
 
 ## Changle, Ashwini, Mruganka: Can you add the exact steps you followed to show the working? Commands used to run each! Steps and sample of one multi-step conversion!
+## The commands to run the setup are in the Readme file. Followinf is an example of multi-step conversion.
+*in to m
+Proxy server ->
+Found: 10.0.0.98 9999
+Step 1/2 using 10.0.0.98:9999 => 34 in = 86.36 cm
+Key : 10.0.0.98 and Value: 5555
+Registering to it..
+
+Found: Ashwinis-MacBook-Pro.local 5557
+Step 2/2 using Ashwinis-MacBook-Pro.local:5557 => 86.36 cm = 0.8636 m
+Response: 34 in = 0.8636 m
+
+Client side ->
+Welcome to Java-based Proxy server..Conversions supported:{ft->lbs=ft->in,in->b,b->lbs, in->lbs=in->b,b->lbs, m->lbs=m->cm,cm->in,in->b,b->lbs, b->ft=b->in,in->ft, b->m=b->in,in->cm,cm->m, lbs->m=lbs->b,b->in,in->cm,cm->m, lbs->in=lbs->b,b->in, cm->ft=cm->in,in->ft, lbs->cm=lbs->b,b->in,in->cm, lbs->ft=lbs->b,b->in,in->ft, m->ft=m->cm,cm->in,in->ft, m->in=m->cm,cm->in, ft->m=ft->in,in->cm,cm->m, ft->cm=ft->in,in->cm, cm->b=cm->in,in->b, ft->b=ft->in,in->b, b->cm=b->in,in->cm, m->b=m->cm,cm->in,in->b, cm->lbs=cm->in,in->b,b->lbs, in->m=in->cm,cm->m}
+in m 34
+0.8636
+
+Conversion server 1 ->
+Started server on port 9999
+
+Accepted connection from client - /10.0.0.98
+34.0 in = 86.36 cm
+
+Conversion server 2->
+Accepted connection from client ('10.0.0.98', 64927)
+('Received message: ', 'cm m 86.36\n')
+In func
+86.36 cm = 0.8636 m

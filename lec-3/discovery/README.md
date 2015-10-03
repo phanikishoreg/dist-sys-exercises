@@ -2,7 +2,7 @@
 
 ###### How to run:
 
-Discovery server is implemented in Python. To run this server, 
+Discovery server is implemented in Python. It runs on port number 5555. To run this server, 
 ```
 $ python discovery.py <portno>
 
