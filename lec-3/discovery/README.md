@@ -83,12 +83,13 @@ IP: Conv Server - is ip address of conversion server
 Port: Discovery server - is port number of discovery server
 ex:
 to register to 1 discovery server:
+```
 $ python PythonConvServ2.py 5757
-```
+
 registered
-```
+
 SUCCESS
-```
+
 Started server on  5757
 ```
 
