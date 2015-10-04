@@ -2,13 +2,13 @@
 
 ###### How to run:
 
-Discovery server is implemented in Python. It runs on port number 5555. To run this server, 
+Discovery server is implemented in Python. To run this server, 
 ```
 $ python discovery.py <portno>
 
 where,
 <portno>: is the port number that discovery will listen on, for requests.
-```
+
 
 Once you have the discovery up and running, you need to then start Conversion servers and Proxy servers with the IP/Hostname and Port Number of this Discovery server.
 
@@ -62,39 +62,81 @@ in->m:in->cm,cm->m
 * Each discovery server entry will contain IP address or hostname and port number with colon as a delimiter.
 * Limitation: Only using maps to store discovery's ip,portno. So, if you have 2 discovery servers running on machine, only the last one is picked for discovery.
 * At the start of the server, ADD requests are sent to all the discovery servers specified. 
-* When the server terminates gracefully (which will never happen!), it sends REMOVE request to each server.
+* When the server terminates gracefully (which will never happen!), it sends p REMOVE request to each server.
 * Whenever a conversion is requested by the client, Proxy server breaks the conversion into multi-steps based on it's predefined table, and sends out LOOKUP request to Discovery server in its list. It sends out request to each Discovery server until it receives a valid "<hostname/IP> <portno>". If it receives a "None" response or "FAILURE" response, it continues to LOOKUP with remaining Discovery servers.
 
 #### Conversion servers
 
-## @Harpreet, @Mruganka: Describe working and things for each server here..
+#### Python Conversion Server 1 - 
 
-#### Conversion Servers - python
-
-Our conversion server is an extended version of HW2 conversion server.
+Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from b to in or in to b and returns the client with the required output.
 To compile and run:
+
+Usage:
+python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
+
+where,
+programName.py - It is the name of the conversion server written in python.
+IP: Conversion Server - The IP of the conversion is given as an input parameter.  
+Port: Conversion Server - It is the port number of the Conversion server on which the conversion server will run.
+IP: Discovery Server - It is the IP address of discovery server
+Port: Discovery server - It is port number of discovery server.
+
+
+Run:
 ```
-$ python <programName.py> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
+python PythonConvServ2.py 10.0.0.3 5555 10.0.0.98 4444
+```
+Output:
+```
+registered
+Response: SUCCESS
+
+Started server on  4444
+```
+#### Python Conversion Server 2 - 
+
+Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from cm to m or m to cm and returns the client with the required output.
+To compile and run:
+
+Usage:
+```
+python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 ```
 where,
-Port: Conversion server - is the port number of conversion server
-IP:Discovery Server - is the ip address of discovery server
-IP: Conv Server - is ip address of conversion server
-Port: Discovery server - is port number of discovery server
-ex:
-to register to 1 discovery server:
-```
-$ python PythonConvServ2.py 5757
+programName.py - It is the name of the conversion server written in python.
+IP: Conversion Server - The IP of the conversion is given as an input parameter.  
+Port: Conversion Server - It is the port number of the Conversion server on which the conversion server will run.
+IP: Discovery Server - It is the IP address of discovery server
+Port: Discovery server - It is port number of discovery server.
 
+
+Run:
+```
+python PythonConvServ2.py 10.0.0.3 5555 10.0.0.98 4445
+```
+Output:
+```
 registered
+Response: SUCCESS
 
-SUCCESS
-
-Started server on  5757
+Started server on  4445
 ```
 
-To cover:
-* how to compile (if java or c programs)
-* how to run, what command line inputs.
-* how it works
+#### C Conversion Server
+
+Compiling
+gcc -o convserver.o convserver.c
+
+Run
+./convserver.o DiscoveryIP DiscoveryPort SelfServerIP SelfServerPort
+
+
+####Java Conversion Server
+Compiling
+javac ConvServer.java
+
+Run
+java ConvServer DiscoveryIP DiscoveryPort SelfServerIP SelfServerPort
+
 

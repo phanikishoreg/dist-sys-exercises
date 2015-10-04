@@ -111,8 +111,6 @@ For more details, please refer to README.md
 
 * If you observe the logs of Proxy, Discovery and Conversion servers, you'll see the distributed behavior.
 
-## Changle, Ashwini, Mruganka: Can you add the exact steps you followed to show the working? Commands used to run each! Steps and sample of one multi-step conversion!
-## The commands to run the setup are in the Readme file. Followinf is an example of multi-step conversion.
 *in to m
 Proxy server ->
 ```
@@ -131,7 +129,7 @@ Welcome to Java-based Proxy server..Conversions supported:{ft->lbs=ft->in,in->b,
 in m 34
 0.8636
 ```
-Conversion server 1 ->
+###Conversion server 1 ->
 ```
 Started server on port 9999
 
@@ -144,3 +142,193 @@ Accepted connection from client ('10.0.0.98', 64927)
 In func
 86.36 cm = 0.8636 m
 ```
+
+###C Conversion Server
+Working Example
+Discovery Server (python):
+Accepted connection from client ('10.0.0.3', 40445)
+
+Request: LOOKUP lbs b
+lookup...
+lbs b
+
+Response: 10.0.0.3 9000
+Accepted connection from client ('10.0.0.3', 40445)
+Request: LOOKUP lbs b
+lookup...
+lbs b
+Response: 10.0.0.3 9000
+
+Accepted connection from client ('10.0.0.3', 40447)
+Request: LOOKUP b in
+lookup...
+b in
+Response: 10.0.0.3 11111
+
+Proxy Server (java):
+Accepted connection from client: /10.0.0.3
+
+
+Request: 76 lbs = ? in
+Key : 10.0.0.3 and Value: 5555
+Registering to it..
+
+C Conversion Server connected(lbs<->b)
+Found: 10.0.0.3 9000
+Step 1/2 using 10.0.0.3:9000 => 76 lbs = 228.000000 b
+Key : 10.0.0.3 and Value: 5555
+Registering to it..
+
+PythonConvServ2 connected(b<->in)
+Found: 10.0.0.3 11111
+Step 2/2 using 10.0.0.3:11111 => 228.000000 b = 1140.0 in
+Response: 76 lbs = 1140.0 in
+
+
+done.
+
+C Conversion Server (lbs<->b):
+./convserver.o 10.0.0.3 5555 10.0.0.3 9000
+Started server on port 9000
+ADD b lbs 10.0.0.3 9000
+ 
+Accepted connection from client[10.0.0.3]
+76.000000 lbs = 228.000000 b
+
+Client(lbs<->in):
+telnet 10.0.0.3 7777
+Trying 10.0.0.3...
+Connected to 10.0.0.3.
+Escape character is '^]'.
+Welcome to Java-based Proxy server..Conversions supported:{ft->lbs=ft->in,in->b,b->lbs, in->lbs=in->b,b->lbs, m->lbs=m->cm,cm->in,in->b,b->lbs, b->ft=b->in,in->ft, b->m=b->in,in->cm,cm->m, lbs->m=lbs->b,b->in,in->cm,cm->m, lbs->in=lbs->b,b->in, cm->ft=cm->in,in->ft, lbs->cm=lbs->b,b->in,in->cm, lbs->ft=lbs->b,b->in,in->ft, m->ft=m->cm,cm->in,in->ft, m->in=m->cm,cm->in, ft->m=ft->in,in->cm,cm->m, ft->cm=ft->in,in->cm, cm->b=cm->in,in->b, ft->b=ft->in,in->b, b->cm=b->in,in->cm, m->b=m->cm,cm->in,in->b, cm->lbs=cm->in,in->b,b->lbs, in->m=in->cm,cm->m}
+lbs in 76
+1140.0
+Connection closed by foreign host.
+
+
+###Java Conversion Server:
+
+Working Example:
+
+Discovery Output:
+Accepted connection from client ('10.0.0.3', 40449)
+Request: ADD in cm 10.0.0.3 8000
+add...
+in cm 10.0.0.3 8000
+{'lbs-m': ['10.0.0.3:7777'], 'b-ft': ['10.0.0.3:7777'], 'ft-lbs': ['10.0.0.3:7777'], 'b-m': ['10.0.0.3:7777'], 'in-lbs': ['10.0.0.3:7777'], 'b-in': ['10.0.0.3:11111'], 'ft-m': ['10.0.0.3:7777'], 'cm-in': ['10.0.0.3:8000'], 'cm-lbs': ['10.0.0.3:7777'], 'b-lbs': ['10.0.0.3:9000'], 'b-cm': ['10.0.0.3:7777'], 'cm-ft': ['10.0.0.3:7777'], 'in-m': ['10.0.0.3:7777']}
+Response: SUCCESS
+Note: The other IP addresses and port numbers will be displayed as the Proxy itself has registered, and is running on port 7777.
+Accepted connection from client ('10.0.0.3', 40451)
+Request: LOOKUP lbs b
+lookup...
+lbs b
+Response: 10.0.0.3 9000
+
+Accepted connection from client ('10.0.0.3', 40453)
+Request: LOOKUP b in
+lookup...
+b in
+Response: 10.0.0.3 11111
+
+Accepted connection from client ('10.0.0.3', 40455)
+Request: LOOKUP in cm
+lookup...
+in cm
+Response: 10.0.0.3 8000
+
+Proxy Server (java):
+Accepted connection from client: /10.0.0.3
+
+
+Request: 89 lbs = ? cm
+Key : 10.0.0.3 and Value: 5555
+Registering to it..
+
+C Conversion Server connected(lbs<->b)
+Found: 10.0.0.3 9000
+Step 1/3 using 10.0.0.3:9000 => 89 lbs = 267.000000 b
+Key : 10.0.0.3 and Value: 5555
+Registering to it..
+
+PythonConvServ2 connected(b<->in)
+Found: 10.0.0.3 11111
+Step 2/3 using 10.0.0.3:11111 => 267.000000 b = 1335.0 in
+Key : 10.0.0.3 and Value: 5555
+Registering to it..
+
+Java Conversion Server connected(in<->cm)
+Found: 10.0.0.3 8000
+Step 3/3 using 10.0.0.3:8000 => 1335.0 in = 3390.9 cm
+Response: 89 lbs = 3390.9 cm
+
+
+done.
+
+Java Conversion Server(in<->cm):
+java ConvServer 10.0.0.3 5555 10.0.0.3 8000
+Started server on port 8000
+
+Accepted connection from client - /10.0.0.3
+1335.0 in = 3390.9 cm
+
+Client(lbs<->cm):
+telnet 10.0.0.3 7777
+Trying 10.0.0.3...
+Connected to 10.0.0.3.
+Escape character is '^]'.
+Welcome to Java-based Proxy server..Conversions supported:{ft->lbs=ft->in,in->b,b->lbs, in->lbs=in->b,b->lbs, m->lbs=m->cm,cm->in,in->b,b->lbs, b->ft=b->in,in->ft, b->m=b->in,in->cm,cm->m, lbs->m=lbs->b,b->in,in->cm,cm->m, lbs->in=lbs->b,b->in, cm->ft=cm->in,in->ft, lbs->cm=lbs->b,b->in,in->cm, lbs->ft=lbs->b,b->in,in->ft, m->ft=m->cm,cm->in,in->ft, m->in=m->cm,cm->in, ft->m=ft->in,in->cm,cm->m, ft->cm=ft->in,in->cm, cm->b=cm->in,in->b, ft->b=ft->in,in->b, b->cm=b->in,in->cm, m->b=m->cm,cm->in,in->b, cm->lbs=cm->in,in->b,b->lbs, in->m=in->cm,cm->m}
+lbs cm 89
+3390.9
+Connection closed by foreign host.
+
+##WORKING OF PYTHON COVERSION SERVERS
+#### Python Conversion Server 1 - 
+
+Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from b to in or in to b and returns the client with the required output.
+To compile and run:
+```
+Usage:
+python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
+
+where,
+programName.py – It is the name of the conversion server written in python.
+IP: Conversion Server – The IP of the conversion is given as an input parameter.  
+Port: Conversion Server – It is the port number of the Conversion server on which the conversion server will run.
+IP: Discovery Server – It is the IP address of discovery server
+Port: Discovery server – It is port number of discovery server.
+
+
+Run:
+ python PythonConvServ2.py 10.0.0.3 5555 10.0.0.98 4444
+
+Output:
+registered
+Response:  SUCCESS
+
+Started server on  4444
+
+#### Python Conversion Server 2 - 
+
+Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from cm to m or m to cm and returns the client with the required output.
+To compile and run:
+```
+Usage:
+python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
+
+where,
+programName.py – It is the name of the conversion server written in python.
+IP: Conversion Server – The IP of the conversion is given as an input parameter.  
+Port: Conversion Server – It is the port number of the Conversion server on which the conversion server will run.
+IP: Discovery Server – It is the IP address of discovery server
+Port: Discovery server – It is port number of discovery server.
+
+
+Run:
+ python PythonConvServ2.py 10.0.0.3 5555 10.0.0.98 4445
+
+Output:
+registered
+Response:  SUCCESS
+
+Started server on  4445
+
