@@ -311,10 +311,10 @@ Started server on  4444
 
 Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from cm to m or m to cm and returns the client with the required output.
 To compile and run:
-```
+ç
 Usage:
 python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
-
+```
 where,
 programName.py ñ It is the name of the conversion server written in python.
 IP: Conversion Server ñ The IP of the conversion is given as an input parameter.  
@@ -324,11 +324,13 @@ Port: Discovery server ñ It is port number of discovery server.
 
 
 Run:
+```
  python PythonConvServ2.py 10.0.0.3 5555 10.0.0.98 4445
-
+```
 Output:
+```
 registered
 Response:  SUCCESS
 
 Started server on  4445
-
+```

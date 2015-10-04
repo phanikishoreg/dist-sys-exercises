@@ -3,7 +3,6 @@
 ###### How to run:
 
 Discovery server is implemented in Python. To run this server, 
-```
 $ python discovery.py <portno>
 
 where,
