@@ -76,7 +76,7 @@ python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Dis
 
 where,
 programName.py - It is the name of the conversion server written in python.
-IP: Conversion Server - The IP of the conversion is given as an input parameter.  
+IP: Conversion Server - The IP of the conversion is given as an input parameter. 
 Port: Conversion Server - It is the port number of the Conversion server on which the conversion server will run.
 IP: Discovery Server - It is the IP address of discovery server
 Port: Discovery server - It is port number of discovery server.
