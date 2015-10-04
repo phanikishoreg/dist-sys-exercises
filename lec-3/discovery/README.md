@@ -74,18 +74,19 @@ in->m:in->cm,cm->m
 Our conversion server is an extended version of HW2 conversion server.
 To compile and run:
 ```
-$ python <programName.py> <IP:Discovery Server> <IP: Conv Server> <portnum>
+$ python <programName.py> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 ```
 where,
+Port: Conversion server - is the port number of conversion server
 IP:Discovery Server - is the ip address of discovery server
-
 IP: Conv Server - is ip address of conversion server
-
+Port: Discovery server - is port number of discovery server
 ex:
 to register to 1 discovery server:
 $ python PythonConvServ2.py 5757
 
 registered
+SUCCESS
 Started server on  5757
 
 To cover:
