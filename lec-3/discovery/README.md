@@ -3,10 +3,10 @@
 ###### How to run:
 
 Discovery server is implemented in Python. To run this server, 
-$ python discovery.py <portno>
+$ python discovery.py portNumber
 
 where,
-<portno>: is the port number that discovery will listen on, for requests.
+portNumber: is the port number that discovery will listen on, for requests.
 
 
 Once you have the discovery up and running, you need to then start Conversion servers and Proxy servers with the IP/Hostname and Port Number of this Discovery server.
