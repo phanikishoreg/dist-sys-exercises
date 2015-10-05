@@ -346,3 +346,16 @@ When compiling the conversion servers written in python without the hostname or 
 ```
 usage: python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 PythonConvServ2.py"
+```
+
+If the register is a duplicate request, the discovery server will display:
+```
+Accepted connection from client ('54.152.18.107', 38326)
+Request: ADD in m 54.152.18.107 5554
+add...
+in m 54.152.18.107 5554
+Response: FAILURE EXISTS
+```
+
+
+
