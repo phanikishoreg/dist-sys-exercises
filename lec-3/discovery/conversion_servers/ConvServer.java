@@ -2,7 +2,7 @@
  *
  *  CS 6421 - Simple Conversation for in<->cm
  *  Compilation:  javac ConvServer.java
- *  Execution:    java ConvServer DiscoveryIP ServerIP port
+ *  Execution:    java ConvServer DiscoveryIP DiscoveryPort ServerIP ServerPortNum
  *
  *  % java ConvServer DiscoveryIP DiscoveryPort ServerIP ServerPortNum
  *
