@@ -148,11 +148,12 @@ gcc -o convserver.o convserver.c
 
 Example:
 ```
-gcc convserver.c 
+gcc ConvServer.c 
 ```
 Run:
 
 ./convserver.o DiscoveryIP DiscoveryPort SelfServerIP SelfServerPort
+
 
 
 DiscoveryIP: It is the IP address of discovery server.
