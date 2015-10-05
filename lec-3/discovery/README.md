@@ -159,9 +159,11 @@ ADD b lbs 52.23.242.100 5554
 
 ####Java Conversion Server - 
 
-*The conversion server is an extended version of HW2 conversion server. 
-*It converts between inch (in) and centimeter (cm).
-*It is written in java.
+The conversion server is an extended version of HW2 conversion server. 
+
+It converts between inch (in) and centimeter (cm).
+
+It is written in java.
 
 Compile:
 javac ConvServer.java
@@ -172,12 +174,17 @@ javac ConvServer.java
 ```
 
 Run
+
 java ConvServer DiscoveryIP DiscoveryPort SelfServerIP SelfServerPort
 
-*DiscoveryIP: It is the IP address of discovery server.
-*DiscoveryPort: It is the port number of discovery server.
-*SelfServerIp: It is the IP address of conversion server.
-*SelfServerPort: It is the port number of conversion server.
+DiscoveryIP: It is the IP address of discovery server.
+
+DiscoveryPort: It is the port number of discovery server.
+
+SelfServerIp: It is the IP address of conversion server.
+
+SelfServerPort: It is the port number of conversion server.
+
 Example:
 ```
 java ConvServer 52.23.242.100 5555 52.23.242.100 5553
@@ -189,7 +196,9 @@ Started server on port 5553
 
 Note:
 When inputting the port number and IP address of conversion server and discovery server, the sequence of the four arguments are different. 
+
 In the conversion servers written in python, first input the IP address and port number of conversion server, and then input the IP address and port number discovery server.
+
 While in the conversion servers written in Java and C, first input discovery server's IP address and port number, and then input the conversion server's IP address and port number.
 
 
