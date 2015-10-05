@@ -125,9 +125,11 @@ Started server on  4445
 
 #### C Conversion Server -
 
-*The conversion server is an extended version of HW2 conversion server. 
-*It converts between banana (b) and pounds (lbs).
-*It is written in C.
+The conversion server is an extended version of HW2 conversion server. 
+
+It converts between banana (b) and pounds (lbs).
+
+It is written in C.
 
 Compile:
 
@@ -140,10 +142,16 @@ gcc convserver.c
 Run:
 
 ./convserver.o DiscoveryIP DiscoveryPort SelfServerIP SelfServerPort
-*DiscoveryIP: It is the IP address of discovery server.
-*DiscoveryPort: It is the port number of discovery server.
-*SelfServerIp: It is the IP address of conversion server.
-*SelfServerPort: It is the port number of conversion server.
+
+
+DiscoveryIP: It is the IP address of discovery server.
+
+DiscoveryPort: It is the port number of discovery server.
+
+SelfServerIp: It is the IP address of conversion server.
+
+SelfServerPort: It is the port number of conversion server.
+
 
 Example:
 ```
@@ -165,7 +173,9 @@ It converts between inch (in) and centimeter (cm).
 
 It is written in java.
 
+
 Compile:
+
 javac ConvServer.java
 
 Example:
@@ -173,7 +183,7 @@ Example:
 javac ConvServer.java
 ```
 
-Run
+Run:
 
 java ConvServer DiscoveryIP DiscoveryPort SelfServerIP SelfServerPort
 
@@ -195,6 +205,7 @@ Started server on port 5553
 ```
 
 Note:
+
 When inputting the port number and IP address of conversion server and discovery server, the sequence of the four arguments are different. 
 
 In the conversion servers written in python, first input the IP address and port number of conversion server, and then input the IP address and port number discovery server.
