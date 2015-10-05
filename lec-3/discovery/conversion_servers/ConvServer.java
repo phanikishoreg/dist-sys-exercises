@@ -185,7 +185,7 @@ public class ConvServer {
 		try {
 			//check if argument length is invalid
 			if(args.length != 4) {
-				System.err.println("Usage: java ConvServer DiscoveryIP DiscoveryPort YourIP YourPort");
+				System.err.println("Usage: java ConvServer DiscoveryIP DiscoveryPort ServerIP ServerPort");
 				System.exit(-1);
 			}
 			// create socket
