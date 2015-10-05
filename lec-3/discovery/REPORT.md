@@ -291,11 +291,11 @@ Usage:
 python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 
 where,
-programName.py ñ It is the name of the conversion server written in python.
-IP: Conversion Server ñ The IP of the conversion is given as an input parameter.  
-Port: Conversion Server ñ It is the port number of the Conversion server on which the conversion server will run.
-IP: Discovery Server ñ It is the IP address of discovery server
-Port: Discovery server ñ It is port number of discovery server.
+programName.py ¬ñ It is the name of the conversion server written in python.
+IP: Conversion Server ¬ñ The IP of the conversion is given as an input parameter.  
+Port: Conversion Server ¬ñ It is the port number of the Conversion server on which the conversion server will run.
+IP: Discovery Server ¬ñ It is the IP address of discovery server
+Port: Discovery server ¬ñ It is port number of discovery server.
 
 
 Run:
@@ -311,16 +311,16 @@ Started server on  4444
 
 Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from cm to m or m to cm and returns the client with the required output.
 To compile and run:
-ç
+¬ç
 Usage:
 python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 ```
 where,
-programName.py ñ It is the name of the conversion server written in python.
-IP: Conversion Server ñ The IP of the conversion is given as an input parameter.  
-Port: Conversion Server ñ It is the port number of the Conversion server on which the conversion server will run.
-IP: Discovery Server ñ It is the IP address of discovery server
-Port: Discovery server ñ It is port number of discovery server.
+programName.py ¬ñ It is the name of the conversion server written in python.
+IP: Conversion Server ¬ñ The IP of the conversion is given as an input parameter.  
+Port: Conversion Server ¬ñ It is the port number of the Conversion server on which the conversion server will run.
+IP: Discovery Server ¬ñ It is the IP address of discovery server
+Port: Discovery server ¬ñ It is port number of discovery server.
 
 
 Run:
@@ -334,3 +334,15 @@ Response:  SUCCESS
 
 Started server on  4445
 ```
+
+####Other Examples
+When compiling the discovery.py without arguments, the output would be, 
+```
+usage: python discovery.py portnum 
+Oh no!! You will not be happy to see this!"
+```
+
+When compiling the conversion servers written in python without the hostname or port number, the output would be,
+```
+usage: python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
+PythonConvServ2.py"
