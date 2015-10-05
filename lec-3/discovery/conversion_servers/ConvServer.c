@@ -1,3 +1,15 @@
+/******************************************************************************
+ *
+ *  CS 6421 - Simple Conversation for b<->lbs
+ *  Compilation:  gcc ConvServer.c
+ *  Execution:    ./a.out DiscoveryIP DiscoveryPort ServerIP ServerPortNum
+ *
+ *  % ./a.out DiscoveryIP DiscoveryPort ServerIP ServerPortNum
+ *
+ *  Students: Phani, Teodor, Harpreet, Mruganka, Ashwini, Changle
+ *
+ ******************************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -22,7 +34,7 @@ static char* server_ip;
  */
 static void
 usage(const char* progname) {
-	printf("Usage:  %s portnum\n", progname);
+	printf("Usage:  %s ./a.out DiscoveryIP DiscoveryPort ServerIP ServerPortNum\n", progname);
 }
 
 /*
