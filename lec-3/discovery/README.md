@@ -72,13 +72,19 @@ Our conversion server is an extended version of HW2 conversion server. It takes 
 To compile and run:
 
 Usage:
+
 python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 
 where,
+
 programName.py - It is the name of the conversion server written in python.
+
 IP: Conversion Server - The IP of the conversion is given as an input parameter. 
+
 Port: Conversion Server - It is the port number of the Conversion server on which the conversion server will run.
+
 IP: Discovery Server - It is the IP address of discovery server
+
 Port: Discovery server - It is port number of discovery server.
 
 
@@ -96,6 +102,8 @@ Started server on  4444
 #### Python Conversion Server 2 - 
 
 Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from cm to m or m to cm and returns the client with the required output.
+
+
 To compile and run:
 
 Usage:
@@ -103,10 +111,15 @@ Usage:
 python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 ```
 where,
+
 programName.py - It is the name of the conversion server written in python.
+
 IP: Conversion Server - The IP of the conversion is given as an input parameter.  
+
 Port: Conversion Server - It is the port number of the Conversion server on which the conversion server will run.
-IP: Discovery Server - It is the IP address of discovery server
+
+IP: Discovery Server - It is the IP address of discovery server.
+
 Port: Discovery server - It is port number of discovery server.
 
 
