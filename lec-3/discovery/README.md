@@ -71,9 +71,7 @@ in->m:in->cm,cm->m
 Our conversion server is an extended version of HW2 conversion server. It takes the IP address of the discovery server and the Conversion Server along with the Port number of both the servers. The Conversion server then registers its IP and port number to the discovery server. This conversion server converts from b to in or in to b and returns the client with the required output.
 To compile and run:
 
-Usage:
-
-python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
+Usage: python <programName.py> <IP:Conversion Server> <Port: Conversion server> <IP:Discovery Server> <Port: Discovery server>
 
 where,
 
