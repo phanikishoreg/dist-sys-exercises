@@ -4,7 +4,7 @@
  *  Compilation:  javac ConvServer.java
  *  Execution:    java ConvServer DiscoveryIP ServerIP port
  *
- *  % java ConvServer DiscoveryIP ServerIP portnum
+ *  % java ConvServer DiscoveryIP DiscoveryPort ServerIP ServerPortNum
  *
  *  Students: Phani, Teodor, Harpreet, Mruganka, Ashwini, Changle
  *
@@ -185,7 +185,7 @@ public class ConvServer {
 		try {
 			//check if argument length is invalid
 			if(args.length != 4) {
-				System.err.println("Usage: java ConvServer DiscoveryIP DiscoveryPort YourIP port");
+				System.err.println("Usage: java ConvServer DiscoveryIP DiscoveryPort YourIP YourPort");
 				System.exit(-1);
 			}
 			// create socket
