@@ -358,4 +358,9 @@ Response: FAILURE EXISTS
 ```
 
 
+If the input does not obey the rules, it will display "FAILURE":
+```
+LOOK UP b lbs
+FAILURE
+```
 
